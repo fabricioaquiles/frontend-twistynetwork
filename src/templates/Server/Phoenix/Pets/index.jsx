@@ -1,0 +1,9 @@
+
+
+export function CategoryPetsTemplate() {
+
+    return(
+        <>
+        </>
+    )
+}
