@@ -44,9 +44,9 @@ export function Header() {
               </div>
             </div>
             <div className="header-logo">
-              <a href="index.html">
+              <a href="/">
                 <img
-                  src="https://media.discordapp.net/attachments/1219693884310032415/1220518265525244084/HaunzMC_sem_fundo.png?ex=6621b036&is=660f3b36&hm=84ccd44eaa40488fbdb0e64aa28fc2dff4eb2fa6aeffdf80ca49748a446046db&=&format=webp&quality=lossless&width=520&height=520"
+                  src="/assets/img/twisty.png"
                   alt="server logo"
                   style={{ width: "24rem", marginBottom: "2rem" }}
                   animation-logo="pulse"
