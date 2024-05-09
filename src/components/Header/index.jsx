@@ -46,12 +46,13 @@ export function Header() {
             <div className="header-logo">
               <a href="/">
                 <img
-                  src="/assets/img/twisty.png"
+                  src="/assets/img/twisty.PNG"
                   alt="server logo"
                   style={{ width: "24rem", marginBottom: "2rem" }}
                   animation-logo="pulse"
                   className="header-logo-image"
                 />
+
               </a>
             </div>
             <a
