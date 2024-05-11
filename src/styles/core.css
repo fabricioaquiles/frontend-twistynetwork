@@ -3170,11 +3170,11 @@ hr {
   font-size: 14px;
   max-width: 90ch;
 }
+
 .giftcard-panel,
 .login-panel {
   background: var(--second-background);
   text-align: center;
-  padding: 50px;
   position: relative;
 }
 .giftcard-panel img,

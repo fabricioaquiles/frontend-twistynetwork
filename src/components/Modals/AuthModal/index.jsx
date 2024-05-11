@@ -6,17 +6,15 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
+  width: 800,
+  bgcolor: "rgba(0, 0, 0, 0.24)",
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
 
 export function AuthModal({ isOpen, handleClose }) {
-  // const isOpen = useAuthModalStore((state) => state.isOpen);
-  // const setIsOpen = useAuthModalStore((state) => state.setIsOpen);
-
+  
   return (
     <>
       <Modal
