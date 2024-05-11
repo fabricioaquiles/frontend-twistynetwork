@@ -11,11 +11,6 @@ export default function Document() {
             </Head>
             <body>
                 <Main />
-                <script src="/ajax/libs/jquery/3.5.1/jquery.min.js" />
-                <script src="/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" />
-                <script src="/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" />
-                <script src="/counter/dist/axios.min.js" />
-                <script src="/assets/js/other.js" />
                 <NextScript />
             </body>
         </Html>
