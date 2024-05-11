@@ -1,5 +1,5 @@
 import { useAuthModalStore } from "../../../store/modal";
-import { Modal, Box, Fade } from "@mui/material";
+import { Modal, Box, Fade, Backdrop } from "@mui/material";
 
 const style = {
   position: "absolute",
