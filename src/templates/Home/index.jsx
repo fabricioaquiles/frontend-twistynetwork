@@ -8,13 +8,14 @@ import {useState} from 'react';
 export function HomeTemplate() {
 
   const [isAuthModalOpen, setAuthModalOpen] = useState(false);
-
+  const handleOpen = () => setAuthModalOpen(true);
+  const handleClose = () => setAuthModalOpen(false);
   return (
     <>
       <>
         
         <Banner />
-        <AuthModal isOpen={isAuthModalOpen}/>
+        <AuthModal isOpen={isAuthModalOpen} handleClose={handleClose}/>
 
         <div className="header-splash">
           <div className="splash__background" />
@@ -194,7 +195,7 @@ export function HomeTemplate() {
                           className="profile-avatar"
                           data-izimodal-open="#modal"
                           onClick={() => {
-                            setAuthModalOpen(true);
+                            handleOpen();
                           }}
                         >
                           <div className="profile-description">
