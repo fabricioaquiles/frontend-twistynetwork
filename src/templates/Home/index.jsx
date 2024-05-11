@@ -27,6 +27,7 @@ export function HomeTemplate() {
           <div className="body--with-sidebar">
             <aside className="twisty-net-sidebar">
               <button
+                className="trigger"
                 data-modal-toggler="selecionarCategoria"
                 aria-label="Seleione uma Categoria"
                 style={{ borderRadius: 4 }}

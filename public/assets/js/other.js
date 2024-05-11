@@ -111,6 +111,12 @@
         onClosed: function () { },
         afterRender: function () { },
       });
+
+      $(document).on('click', '.trigger', function (event) {
+        event.preventDefault();
+        $('#modal').iziModal('open')
+    });
+
       function numberWithCommas(number) {
         return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       }
