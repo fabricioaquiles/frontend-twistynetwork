@@ -1,5 +1,5 @@
 import { useAuthModalStore } from '../../../store/modal'
-import Modal from '@mui/material/Modal';
+import { Modal } from '@mui/material';
 
 export function AuthModal({isOpen, handleClose}) {
 
