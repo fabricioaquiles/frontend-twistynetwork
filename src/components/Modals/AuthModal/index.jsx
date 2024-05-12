@@ -38,7 +38,7 @@ export function AuthModal({ isOpen, handleClose }) {
                 O nick não pode conter espaços ou símbolos, insira apenas o
                 nickname que deseja efetuar compras.
               </p>
-              <form method="post" action="/login">
+              <form method="post">
                 <div className="username">
                   <div className="twisty-net-login">
                     <div id="IGN_MC">
