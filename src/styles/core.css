@@ -3833,7 +3833,7 @@ hr {
   }
 }
 .navigationModal .t-modal-content__box__categoryModal {
-  padding: 1.25rem;
+  /* padding: 1.25rem; */
 }
 .navigationModal
   .t-modal-content__box__categoryModal
@@ -3863,7 +3863,7 @@ hr {
   a {
   display: grid;
   gap: 0.9375rem;
-  padding: 0.9375rem;
+  /* padding: 0.9375rem; */
   box-shadow: 0 0 0 3px inset hsla(0, 0%, 100%, 0.02);
   background: var(--third-background);
   border-radius: 6px;
