@@ -24,6 +24,7 @@ export function NavigationModal({ isOpen, handleClose }) {
         </div>
       </dialog>
       <Modal
+        className="navigationModal"
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         open={isOpen}
