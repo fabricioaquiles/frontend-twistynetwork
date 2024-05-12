@@ -3468,6 +3468,11 @@ hr {
   position: relative;
   z-index: 1;
 }
+.navigationModal .t-modal-content {
+  padding-top: 0 !important;
+  margin: 0 auto !important;
+
+}
 .rank__table__features__col[data-accordion="true"] .accordion__icon,
 .rotate__compress {
   transform: rotate(-180deg);
