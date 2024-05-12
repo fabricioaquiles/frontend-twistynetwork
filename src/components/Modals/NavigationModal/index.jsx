@@ -1,4 +1,5 @@
 import { Modal, Box, Fade, Backdrop } from "@mui/material";
+import {useRouter} from 'next/router';
 
 const style = {
   position: "absolute",
@@ -13,6 +14,8 @@ const style = {
 };
 
 export function NavigationModal({ isOpen, handleClose }) {
+  const router = useRouter();
+
   return (
     <>
       <Modal
@@ -38,7 +41,9 @@ export function NavigationModal({ isOpen, handleClose }) {
                     <p>Clique em qualquer lugar fora para sair desta aba.</p>
                     <ul>
                       <li>
-                        <a href="servidor/phoenix.html" className="">
+                        <a onClick={() => {
+                          router.push("/server/phoenix")
+                        }} className="">
                           <img src="https://visage.surgeplay.com/head/512/Epicphoenix766?y=30" />
                           R. UP Phoenix
                         </a>
