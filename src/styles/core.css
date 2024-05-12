@@ -3875,7 +3875,7 @@ hr {
   transition: 0.2s ease-in-out;
   color: #fff;
 }
-.modal[data-modal-type="selecionarCategoria"]
+.navigationModal
   .t-modal-content__box__categoryModal
   ul
   li
@@ -3885,7 +3885,7 @@ hr {
   display: block;
   transition: 0.2s ease-in-out;
 }
-.modal[data-modal-type="selecionarCategoria"]
+.navigationModal
   .t-modal-content__box__categoryModal
   ul
   li

@@ -15,14 +15,6 @@ const style = {
 export function NavigationModal({ isOpen, handleClose }) {
   return (
     <>
-      <dialog data-loading-modal="" data-modal-type="package">
-        <div className="t-modal-content">
-          <button className="t-modal-content--close" aria-label="Close Modal">
-            <i aria-hidden="true" className="mdi mdi-window-close" />
-          </button>
-          <div className="t-modal-content__box"></div>
-        </div>
-      </dialog>
       <Modal
         className="navigationModal"
         aria-labelledby="transition-modal-title"
