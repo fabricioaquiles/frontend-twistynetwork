@@ -44,7 +44,7 @@ export function AuthModal({ isOpen, handleClose }) {
               <p className="login-title">Insira seu nickname para prosseguir</p>
               <p className="login-description">
                 O nick não pode conter espaços ou símbolos, insira apenas o
-                nickname que deseja efetuar compras. {inputName}
+                nickname que deseja efetuar compras.
               </p>
               <form method="post">
                 <div className="username">
@@ -68,6 +68,7 @@ export function AuthModal({ isOpen, handleClose }) {
                       onClick={(e) => {
                         e.preventDefault();
                         setUserName(fieldName);
+                        alert(fieldName);
                       }}
                       type="submit"
                     >
