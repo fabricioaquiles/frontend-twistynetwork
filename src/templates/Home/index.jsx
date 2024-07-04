@@ -1,12 +1,11 @@
-import { Banner } from '../../components/Banner'
-import { Header } from '../../components/Header'
-import { Footer } from '../../components/Footer'
-import { AuthModal, NavigationModal } from '../../components/Modals'
+import { Banner } from "../../components/Banner";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
+import { AuthModal, NavigationModal } from "../../components/Modals";
 
-import {useState} from 'react';
+import { useState } from "react";
 
 export function HomeTemplate() {
-
   const [isAuthModalOpen, setAuthModalOpen] = useState(false);
   const [isNavigationModalOpen, setNavigationModalOpen] = useState(false);
 
@@ -18,14 +17,16 @@ export function HomeTemplate() {
   return (
     <>
       <>
-        
         <Banner />
-        <AuthModal isOpen={isAuthModalOpen} handleClose={handleAuthModalClose}/>
+        <AuthModal
+          isOpen={isAuthModalOpen}
+          handleClose={handleAuthModalClose}
+        />
 
         <div className="header-splash">
           <div className="splash__background" />
         </div>
-        
+
         <Header />
 
         <div className="twisty-net-wrapper">
@@ -51,7 +52,12 @@ export function HomeTemplate() {
                   Clique para Navegar
                 </span>
               </button>
-              <div className="sidebar-header sidebar-round">
+              <div
+                onClick={() => {
+                  handleNavigationModalOpen();
+                }}
+                className="sidebar-header sidebar-round"
+              >
                 <p>
                   <i className="mdi mdi-close mobile-icon close-mobile" />
                   <i className="mdi mdi-menu mobile-icon" />
@@ -258,7 +264,10 @@ export function HomeTemplate() {
         <div className="twisty-net-wrapper">
           <div className="footer-twisty-net" id={41012}>
             <Footer />
-            <NavigationModal isOpen={isNavigationModalOpen} handleClose={handleNavigationModalClose}/>
+            <NavigationModal
+              isOpen={isNavigationModalOpen}
+              handleClose={handleNavigationModalClose}
+            />
           </div>
         </div>
       </>

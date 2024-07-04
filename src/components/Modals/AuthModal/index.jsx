@@ -1,5 +1,6 @@
-import { useAuthModalStore } from "../../../store/modal";
 import { Modal, Box, Fade, Backdrop } from "@mui/material";
+import { useAuth } from "../../../store/auth";
+import { useState } from "react";
 
 const style = {
   position: "absolute",
@@ -14,7 +15,14 @@ const style = {
 };
 
 export function AuthModal({ isOpen, handleClose }) {
-  
+  const setUserName = useAuth((state) => state.setUserName);
+
+  const [inputName, setInputName] = useState("");
+
+  function handleSetInputName(arg) {
+    setInputName(arg);
+  }
+
   return (
     <>
       <Modal
@@ -36,7 +44,7 @@ export function AuthModal({ isOpen, handleClose }) {
               <p className="login-title">Insira seu nickname para prosseguir</p>
               <p className="login-description">
                 O nick não pode conter espaços ou símbolos, insira apenas o
-                nickname que deseja efetuar compras.
+                nickname que deseja efetuar compras. {inputName}
               </p>
               <form method="post">
                 <div className="username">
@@ -52,9 +60,17 @@ export function AuthModal({ isOpen, handleClose }) {
                         name="ign"
                         id="mc_IGN_INPUT"
                         autoComplete="off"
+                        onChange={(e) => handleSetInputName(e.target)}
                       />
                     </div>
-                    <button className="" type="submit">
+                    <button
+                      className=""
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setUserName(fieldName);
+                      }}
+                      type="submit"
+                    >
                       Prosseguir
                     </button>
                   </div>
