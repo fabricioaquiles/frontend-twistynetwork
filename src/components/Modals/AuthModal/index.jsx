@@ -67,8 +67,8 @@ export function AuthModal({ isOpen, handleClose }) {
                       className=""
                       onClick={(e) => {
                         e.preventDefault();
-                        setUserName(fieldName);
-                        alert(fieldName);
+                        setUserName(inputName);
+                        alert(inputName);
                       }}
                       type="submit"
                     >
