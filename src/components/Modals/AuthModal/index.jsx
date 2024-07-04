@@ -60,7 +60,7 @@ export function AuthModal({ isOpen, handleClose }) {
                         name="ign"
                         id="mc_IGN_INPUT"
                         autoComplete="off"
-                        onChange={(e) => handleSetInputName(e.target)}
+                        onChange={(e) => handleSetInputName(e.target.value)}
                       />
                     </div>
                     <button
