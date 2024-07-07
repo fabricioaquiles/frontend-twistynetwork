@@ -17,7 +17,11 @@ export default function DashboardLayout({
         />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
       </head>
-      <body>{children}</body>
+      <body>
+        <div className="nk-app">
+          <div className="nk-main">{children}</div>
+        </div>
+      </body>
     </html>
   );
 }
