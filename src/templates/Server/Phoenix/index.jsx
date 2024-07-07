@@ -6,9 +6,6 @@ import { NavigationModal } from "../../../components/Modals";
 export function ServerPhoenixTemplate() {
   const [isNavigationModalOpen, setNavigationModalOpen] = useState(false);
 
-  const handleNavigationModalOpen = () => setNavigationModalOpen(true);
-  const handleNavigationModalClose = () => setNavigationModalOpen(false);
-
   return (
     <>
       <Banner />
@@ -22,7 +19,7 @@ export function ServerPhoenixTemplate() {
               aria-label="Seleione uma Categoria"
               style={{ borderRadius: 4 }}
               onClick={() => {
-                handleNavigationModalOpen();
+                setNavigationModalOpen(true);
               }}
             >
               <img
@@ -379,7 +376,9 @@ export function ServerPhoenixTemplate() {
           <Footer />
           <NavigationModal
             isOpen={isNavigationModalOpen}
-            handleClose={handleNavigationModalClose}
+            handleClose={() => {
+              setNavigationModalOpen(false)
+            }}
           />
         </div>
       </div>
