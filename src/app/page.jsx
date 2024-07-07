@@ -1,3 +1,5 @@
+"use client";
+
 import { HomeTemplate } from "../templates/Home";
 
 export const metadata = {
