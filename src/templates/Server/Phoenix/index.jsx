@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Banner } from "../../../components/Banner";
 import { Footer } from "../../../components/Footer";
 import { Header } from "../../../components/Header";
@@ -5,6 +6,9 @@ import { NavigationModal } from "../../../components/Modals";
 
 export function ServerPhoenixTemplate() {
   const [isNavigationModalOpen, setNavigationModalOpen] = useState(false);
+
+  const handleNavigationModalOpen = () => setNavigationModalOpen(true);
+  const handleNavigationModalClose = () => setNavigationModalOpen(false);
 
   return (
     <>
@@ -19,7 +23,7 @@ export function ServerPhoenixTemplate() {
               aria-label="Seleione uma Categoria"
               style={{ borderRadius: 4 }}
               onClick={() => {
-                setNavigationModalOpen(true);
+                handleNavigationModalOpen();
               }}
             >
               <img
@@ -376,9 +380,7 @@ export function ServerPhoenixTemplate() {
           <Footer />
           <NavigationModal
             isOpen={isNavigationModalOpen}
-            handleClose={() => {
-              setNavigationModalOpen(false)
-            }}
+            handleClose={handleNavigationModalClose}
           />
         </div>
       </div>
