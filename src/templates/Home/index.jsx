@@ -1,11 +1,13 @@
 import { Banner } from "../../components/Banner";
-import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
+import { Header } from "../../components/Header";
 import { AuthModal, NavigationModal } from "../../components/Modals";
 
 import { useState } from "react";
+import { useAuth } from "../../store/auth";
 
 export function HomeTemplate() {
+  const { userName } = useAuth((state) => state);
   const [isAuthModalOpen, setAuthModalOpen] = useState(false);
   const [isNavigationModalOpen, setNavigationModalOpen] = useState(false);
 
@@ -202,34 +204,35 @@ export function HomeTemplate() {
                       <span className="mdi mdi-fireplace" />
                     </p>
                   </div>
-                  <header className="twisty-net-header mobile-hidden">
-                    <div className="twisty-net-wrapper prioritate" id={41012}>
-                      <div className="top-bar">
-                        <div
-                          className="profile-avatar"
-                          data-izimodal-open="#modal"
-                          onClick={() => {
-                            handleAuthModalOpen();
-                          }}
-                        >
-                          <div className="profile-description">
-                            {/*Quem é Você só pode ser visível caso o usuario n esteja logado, caso contrario, visibility hidden*/}
-                            <p className="profile-title">Anônimo</p>
-                            <p className="profile-description-text">
-                              Clique para entrar
-                            </p>
-                          </div>
-                          <div className="profile-head">
-                            <img
-                              className="avatar-head"
-                              src="https://visage.surgeplay.com/face/512/Teryza.png"
-                              alt="Cabeça de Quem?"
-                            />
+                  {userName == null && (
+                    <header className="twisty-net-header mobile-hidden">
+                      <div className="twisty-net-wrapper prioritate" id={41012}>
+                        <div className="top-bar">
+                          <div
+                            className="profile-avatar"
+                            data-izimodal-open="#modal"
+                            onClick={() => {
+                              handleAuthModalOpen();
+                            }}
+                          >
+                            <div className="profile-description">
+                              <p className="profile-title">Anônimo</p>
+                              <p className="profile-description-text">
+                                Clique para entrar
+                              </p>
+                            </div>
+                            <div className="profile-head">
+                              <img
+                                className="avatar-head"
+                                src="https://visage.surgeplay.com/face/512/Teryza.png"
+                                alt="Cabeça de Quem?"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </header>
+                    </header>
+                  )}
                 </div>
                 <p>
                   <span style={{ fontSize: 15 }}>

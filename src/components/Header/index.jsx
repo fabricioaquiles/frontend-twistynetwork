@@ -22,15 +22,6 @@ export function Header() {
                 </div>
               </div>
             )}
-
-            <a
-              href="../index.htm"
-              className="icon-theme bottom-avatar mobile-hidden"
-            >
-              <i className="mdi mdi-lightbulb-cfl-off" />{" "}
-              {/* Escuro Habilitado */}
-              {/* <i class="mdi mdi-lightbulb-cfl"></i> Claro Habilitado */}
-            </a>
           </div>
           <div className="twisty-net-header-g">
             <div className="widget minecraft-widget">

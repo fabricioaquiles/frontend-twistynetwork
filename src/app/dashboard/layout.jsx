@@ -10,6 +10,7 @@ export default function DashboardLayout({
       <head>
         <meta charset="utf-8" />
         <meta name="author" content="Fabricio Aquiles" />
+        <title>Twisty Network - Dashboard</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
