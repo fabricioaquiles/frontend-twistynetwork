@@ -1,5 +1,5 @@
 import { Modal, Box, Fade, Backdrop } from "@mui/material";
-import {useRouter} from 'next/router';
+import { useRouter } from "next/navigation";
 
 const style = {
   position: "absolute",
@@ -34,24 +34,27 @@ export function NavigationModal({ isOpen, handleClose }) {
       >
         <Fade in={isOpen}>
           <Box sx={style}>
-              <div className="t-modal-content">
-                <div className="t-modal-content__box">
-                  <div className="t-modal-content__box__categoryModal">
-                    <h3>Selecione um Item</h3>
-                    <p>Clique em qualquer lugar fora para sair desta aba.</p>
-                    <ul>
-                      <li>
-                        <a onClick={() => {
-                          router.push("/server/phoenix")
-                        }} className="">
-                          <img src="https://visage.surgeplay.com/head/512/Epicphoenix766?y=30" />
-                          R. UP Phoenix
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+            <div className="t-modal-content">
+              <div className="t-modal-content__box">
+                <div className="t-modal-content__box__categoryModal">
+                  <h3>Selecione um Item</h3>
+                  <p>Clique em qualquer lugar fora para sair desta aba.</p>
+                  <ul>
+                    <li>
+                      <a
+                        onClick={() => {
+                          router.push("/server/phoenix");
+                        }}
+                        className=""
+                      >
+                        <img src="https://visage.surgeplay.com/head/512/Epicphoenix766?y=30" />
+                        R. UP Phoenix
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </div>
+            </div>
           </Box>
         </Fade>
       </Modal>
