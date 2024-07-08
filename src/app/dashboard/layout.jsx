@@ -21,10 +21,13 @@ export default function DashboardLayout({
         <link rel="shortcut icon" href="/assets/img/twisty.PNG" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" />
       </head>
-      <body>
+      <body className="nk-body bg-lighter npc-general has-sidebar dark-mode">
         <div className="nk-app">
           <div className="nk-main">{children}</div>
         </div>
+        <script src="/admin/assets/js/bundle.js?ver=3.1.0"></script>
+        <script src="/admin/assets/js/scripts.js?ver=3.1.0"></script>
+        <script src="/admin/assets/js/charts/gd-default.js?ver=3.1.0"></script>
       </body>
     </html>
   );
