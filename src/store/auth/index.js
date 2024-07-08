@@ -13,5 +13,3 @@ export const useAuth = create(
         },
     ),
 )
-
-export { useAuth };
