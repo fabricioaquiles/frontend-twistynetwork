@@ -9,7 +9,10 @@ import { useState } from "react";
 
 export function HomeTemplate() {
   const { userName } = useAuth((state) => state);
-  const { isAuthModalOpen, setAuthModalOpen } = useAuthModal((state) => state);
+  const { isAuthModalOpen, setAuthModalOpen } = useAuthModal((state) => ({
+    isAuthModalOpen: state.isAuthModalOpen,
+    setAuthModalOpen: state.setAuthModalOpen,
+  }));
   const [isNavigationModalOpen, setNavigationModalOpen] = useState(false);
 
   const handleAuthModalOpen = () => setAuthModalOpen(true);
