@@ -68,7 +68,6 @@ export function AuthModal({ isOpen, handleClose }) {
                       className=""
                       onClick={(e) => {
                         e.preventDefault();
-                        de;
 
                         if (inputName == "") {
                           toast.error(
