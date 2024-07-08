@@ -1,28 +1,28 @@
+import { useAuth } from "../../store/auth";
+
 export function Header() {
+  const userName = useAuth((state) => state.userName);
   return (
     <>
       <header className="twisty-net-header">
         <div className="twisty-net-wrapper prioritate" id={41012}>
           <div className="top-bar">
-            {/*Este profile-avatar só pode ser vísivel caso ele esteja logado, caso contrario, visibility hidden, nao display none*/}
-            <div className="profile-avatar bottom-avatar mobile-hidden">
-              <div className="profile-description">
-                <p className="profile-title">
-                  <span style={{ color: "#F44336", fontWeight: 800 }}>
-                    ADMIN
-                  </span>{" "}
-                  Maciel
-                </p>
-                <p className="profile-description-text">(Você)</p>
+            {userName != null && (
+              <div className="profile-avatar bottom-avatar mobile-hidden">
+                <div className="profile-description">
+                  <p className="profile-title">{userName}</p>
+                  <p className="profile-description-text">(Você)</p>
+                </div>
+                <div className="profile-head">
+                  <img
+                    className="avatar-logged"
+                    src={`https://visage.surgeplay.com/head/512/${userName}.png`}
+                    alt={`Cabeça de ${userName}`}
+                  />
+                </div>
               </div>
-              <div className="profile-head">
-                <img
-                  className="avatar-logged"
-                  src="https://visage.surgeplay.com/head/512/EduKof.png"
-                  alt="Cabeça de EduKof"
-                />
-              </div>
-            </div>
+            )}
+
             <a
               href="../index.htm"
               className="icon-theme bottom-avatar mobile-hidden"
@@ -52,7 +52,6 @@ export function Header() {
                   animation-logo="pulse"
                   className="header-logo-image"
                 />
-
               </a>
             </div>
             <a

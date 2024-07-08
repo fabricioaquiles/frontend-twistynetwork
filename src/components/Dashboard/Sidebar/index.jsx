@@ -26,7 +26,7 @@ export function DashboardSidebar() {
             <a href="#" className="logo-link nk-sidebar-logo">
               <img
                 className="logo-light logo-img"
-                src="images/spacelabs.png"
+                src="/assets/img/twisty.PNG"
                 alt="logo"
                 style={{ marginLeft: "3rem" }}
               />
@@ -55,7 +55,23 @@ export function DashboardSidebar() {
                     <span className="nk-menu-icon">
                       <em className="icon ni ni-google-pay-fill" />
                     </span>
-                    <span className="nk-menu-text">Token Pagamento</span>
+                    <span className="nk-menu-text">Cupons de desconto</span>
+                  </a>
+                </li>
+                <li className="nk-menu-item">
+                  <a href="#" className="nk-menu-link">
+                    <span className="nk-menu-icon">
+                      <em className="icon ni ni-google-pay-fill" />
+                    </span>
+                    <span className="nk-menu-text">Gerenciar produtos</span>
+                  </a>
+                </li>
+                <li className="nk-menu-item">
+                  <a href="#" className="nk-menu-link">
+                    <span className="nk-menu-icon">
+                      <em className="icon ni ni-google-pay-fill" />
+                    </span>
+                    <span className="nk-menu-text">Token de Pagamento</span>
                   </a>
                 </li>
                 <li className="nk-menu-heading">
