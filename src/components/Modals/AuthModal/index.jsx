@@ -2,6 +2,7 @@ import { useAuth } from "@/store/auth";
 import { Backdrop, Box, Fade, Modal } from "@mui/material";
 import { useState } from "react";
 import { toast } from "sonner";
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -67,6 +68,7 @@ export function AuthModal({ isOpen, handleClose }) {
                       className=""
                       onClick={(e) => {
                         e.preventDefault();
+                        de;
 
                         if (inputName == "") {
                           toast.error(
