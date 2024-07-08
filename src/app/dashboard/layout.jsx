@@ -1,8 +1,8 @@
 "use client";
 
-import "../styles/core.css";
+import "../../styles/dashboard-core.css";
 
-export default function HomeLayout({
+export default function DashboardLayout({
   children, // will be a page or nested layout
 }) {
   return (
@@ -14,13 +14,11 @@ export default function HomeLayout({
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <meta name="description" content="Twisty Network" />
+        <meta
+          name="description"
+          content="Dashboard panel from Twisty Network"
+        />
         <link rel="shortcut icon" href="/assets/img/twisty.PNG" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" />
-        <script src="/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" />
-        <script src="/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" />
-        <script src="/counter/dist/axios.min.js" />
-        <script src="/assets/js/other.js" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" />
       </head>
       <body>
