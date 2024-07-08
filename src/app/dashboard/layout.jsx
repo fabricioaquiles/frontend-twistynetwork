@@ -12,7 +12,7 @@ export default function DashboardLayout({
           rel="stylesheet"
           href="/admin/assets/css/pulsecode.css?ver=3.1.0"
         />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" />
       </head>
       <body className="nk-body bg-lighter npc-general has-sidebar dark-mode">
         <div className="nk-app">

@@ -12,7 +12,7 @@ export default function HomeLayout({
         <script src="/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" />
         <script src="/counter/dist/axios.min.js" />
         <script src="/assets/js/other.js" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" />
       </head>
       <body>
         <div className="nk-app">

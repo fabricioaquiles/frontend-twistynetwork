@@ -1,8 +1,6 @@
-import { DashboardHomeTemplate } from "../../templates/Dashboard/Home";
+"use client";
 
-export const metadata = {
-  title: "TwistyNetwork | Dashboard",
-};
+import { DashboardHomeTemplate } from "../../templates/Dashboard/Home";
 
 export default function DashboardHome() {
   return (
