@@ -1,8 +1,8 @@
+import { Banner } from "@/components/Banner";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { NavigationModal } from "@/components/Modals";
 import { useState } from "react";
-import { Banner } from "../../../components/Banner";
-import { Footer } from "../../../components/Footer";
-import { Header } from "../../../components/Header";
-import { NavigationModal } from "../../../components/Modals";
 
 export function ServerPhoenixTemplate() {
   const [isNavigationModalOpen, setNavigationModalOpen] = useState(false);

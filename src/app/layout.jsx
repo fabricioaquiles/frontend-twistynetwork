@@ -1,6 +1,7 @@
 "use client";
 
-import "../styles/core.css";
+import "@/styles/core.css";
+import { Toaster } from "sonner";
 
 export default function HomeLayout({
   children, // will be a page or nested layout
@@ -48,6 +49,7 @@ export default function HomeLayout({
         <div className="nk-app">
           <div className="nk-main">{children}</div>
         </div>
+        <Toaster richColors position="top-right" />
       </body>
       <script src="/ajax/libs/jquery/3.5.1/jquery.min.js" />
       <script src="/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" />

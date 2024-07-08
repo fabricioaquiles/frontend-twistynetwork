@@ -1,8 +1,8 @@
-import {create} from 'zustand';
+import { create } from 'zustand';
 
-const useAuthModalStore = create((set) => ({
-    isOpen: false,
-    setIsOpen: (arg) => set({isOpen: arg}),
+const useAuthModal = create((set) => ({
+    isAuthModalOpen: false,
+    setAuthModalOpen: (arg) => set({ isOpen: arg }),
 }));
 
-export {useAuthModalStore}
+export { useAuthModal };

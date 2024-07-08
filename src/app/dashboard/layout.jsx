@@ -1,6 +1,6 @@
 "use client";
 
-import "../../styles/dashboard-core.css";
+import "@/styles/dashboard-core.css";
 
 export default function DashboardLayout({
   children, // will be a page or nested layout

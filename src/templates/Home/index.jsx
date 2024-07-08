@@ -1,14 +1,15 @@
-import { Banner } from "../../components/Banner";
-import { Footer } from "../../components/Footer";
-import { Header } from "../../components/Header";
-import { AuthModal, NavigationModal } from "../../components/Modals";
+import { Banner } from "@/components/Banner";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { AuthModal, NavigationModal } from "@/components/Modals";
 
+import { useAuth } from "@/store/auth";
+import { useAuthModal } from "@/store/modal";
 import { useState } from "react";
-import { useAuth } from "../../store/auth";
 
 export function HomeTemplate() {
   const { userName } = useAuth((state) => state);
-  const [isAuthModalOpen, setAuthModalOpen] = useState(false);
+  const { isAuthModalOpen, setAuthModalOpen } = useAuthModal((state) => state);
   const [isNavigationModalOpen, setNavigationModalOpen] = useState(false);
 
   const handleAuthModalOpen = () => setAuthModalOpen(true);

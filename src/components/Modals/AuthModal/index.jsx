@@ -1,7 +1,7 @@
-import { Modal, Box, Fade, Backdrop } from "@mui/material";
-import { useAuth } from "../../../store/auth";
+import { useAuth } from "@/store/auth";
+import { Backdrop, Box, Fade, Modal } from "@mui/material";
 import { useState } from "react";
-
+import { toast } from "sonner";
 const style = {
   position: "absolute",
   top: "50%",
@@ -67,8 +67,15 @@ export function AuthModal({ isOpen, handleClose }) {
                       className=""
                       onClick={(e) => {
                         e.preventDefault();
+
+                        if (inputName == "") {
+                          toast.error(
+                            "Você deve inserir dados de login válidos."
+                          );
+                          return;
+                        }
                         setUserName(inputName);
-                        alert(inputName);
+                        toast.success("Login realizado com sucesso.");
                       }}
                       type="submit"
                     >

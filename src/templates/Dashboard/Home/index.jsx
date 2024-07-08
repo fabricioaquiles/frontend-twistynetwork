@@ -1,5 +1,5 @@
-import { DashboardFooter } from "../../../components/Dashboard/Footer";
-import { DashboardSidebar } from "../../../components/Dashboard/Sidebar";
+import { DashboardFooter } from "@/components/Dashboard/Footer";
+import { DashboardSidebar } from "@/components/Dashboard/Sidebar";
 
 export function DashboardHomeTemplate() {
   return (

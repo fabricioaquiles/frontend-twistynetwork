@@ -1,14 +1,25 @@
-import { useAuth } from "../../store/auth";
+import { useAuth } from "@/store/auth";
+import { useAuthModal } from "@/store/modal";
 
 export function Header() {
+  const { setAuthModalOpen } = useAuthModal((state) => state);
   const userName = useAuth((state) => state.userName);
+
+  const handleAuthModalOpen = () => setAuthModalOpen(true);
+
   return (
     <>
       <header className="twisty-net-header">
         <div className="twisty-net-wrapper prioritate" id={41012}>
           <div className="top-bar">
             {userName != null && (
-              <div className="profile-avatar bottom-avatar mobile-hidden">
+              <div
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleAuthModalOpen();
+                }}
+                className="profile-avatar bottom-avatar mobile-hidden"
+              >
                 <div className="profile-description">
                   <p className="profile-title">{userName}</p>
                   <p className="profile-description-text">(Você)</p>
