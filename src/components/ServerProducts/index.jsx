@@ -1,18 +1,18 @@
 import axios from "axios";
 import { useQuery } from "react-query";
 
-const getProducts = async (filter) => {
+async function getProducts() {
   const response = await axios.get(
-    `https://backend-twistynetwork.vercel.app/products?filterType=category?filterValue=${filter}`
+    `https://backend-twistynetwork.vercel.app/products?filterType=category?filterValue=teste`
   );
-  console.log(data);
+  console.log(response.data);
   return response.data;
-};
+}
 
 export default function ServerProducts({ filter }) {
   const { data, isLoading } = useQuery({
     queryKey: ["products"],
-    queryFn: getProducts(filter),
+    queryFn: getProducts,
   });
 
   return (
@@ -20,7 +20,7 @@ export default function ServerProducts({ filter }) {
       {isLoading ? (
         <></>
       ) : (
-        data.map((item, index) => {
+        data?.map((item, index) => (
           <div className="category__list--item">
             <div className="category__list__item--title">
               <img
@@ -52,8 +52,8 @@ export default function ServerProducts({ filter }) {
                 Efetuar Compra
               </a>
             </div>
-          </div>;
-        })
+          </div>
+        ))
       )}
     </>
   );
