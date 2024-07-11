@@ -2,6 +2,7 @@ import { Banner } from "@/components/Banner";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { NavigationModal } from "@/components/Modals";
+import { ServerProducts } from "@/components/ServerProducts";
 import { useState } from "react";
 
 export function ServerPhoenixTemplate() {
