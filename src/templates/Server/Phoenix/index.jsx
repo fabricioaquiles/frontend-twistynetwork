@@ -2,8 +2,12 @@ import { Banner } from "@/components/Banner";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { NavigationModal } from "@/components/Modals";
-import { ServerProducts } from "@/components/ServerProducts";
+import dynamic from "next/dynamic";
 import { useState } from "react";
+
+const ServerProducts = dynamic(() => import("@/components/ServerProducts"), {
+  ssr: false,
+});
 
 export function ServerPhoenixTemplate() {
   const [isNavigationModalOpen, setNavigationModalOpen] = useState(false);
