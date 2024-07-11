@@ -11,7 +11,7 @@ async function getProducts(filter) {
 export default function ServerProducts({ filter }) {
   const { data, isLoading } = useQuery({
     queryKey: ["products"],
-    queryFn: getProducts(filter),
+    queryFn: () => getProducts(filter),
   });
 
   return (
