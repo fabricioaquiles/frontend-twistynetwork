@@ -1,6 +1,8 @@
 "use client";
 
+import { queryClient } from "@/services/queryClient";
 import "@/styles/core.css";
+import { QueryClientProvider } from "react-query";
 import { Toaster } from "sonner";
 
 export default function HomeLayout({
@@ -46,16 +48,16 @@ export default function HomeLayout({
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" />
       </head>
       <body>
-        <div className="nk-app">
-          <div className="nk-main">{children}</div>
-        </div>
-        <Toaster richColors position="top-right" />
+        <QueryClientProvider client={queryClient}>
+          <div className="nk-app">
+            <div className="nk-main">{children}</div>
+          </div>
+          <Toaster richColors position="top-right" />
+        </QueryClientProvider>
+        <script src="/ajax/libs/jquery/3.5.1/jquery.min.js" />
+        <script src="/counter/dist/axios.min.js" />
+        <script src="/assets/js/other.js" />
       </body>
-      <script src="/ajax/libs/jquery/3.5.1/jquery.min.js" />
-      <script src="/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" />
-      <script src="/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" />
-      <script defer src="/counter/dist/axios.min.js" />
-      <script src="/assets/js/other.js" />
     </html>
   );
 }
