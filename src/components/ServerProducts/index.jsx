@@ -1,18 +1,17 @@
 import axios from "axios";
 import { useQuery } from "react-query";
 
-async function getProducts() {
+async function getProducts(filter) {
   const response = await axios.get(
-    `https://backend-twistynetwork.vercel.app/products?filterType=category?filterValue=teste`
+    `https://backend-twistynetwork.vercel.app/products?filterType=category?filterValue=${filter}`
   );
-  console.log(response.data);
   return response.data;
 }
 
 export default function ServerProducts({ filter }) {
   const { data, isLoading } = useQuery({
     queryKey: ["products"],
-    queryFn: getProducts,
+    queryFn: getProducts(filter),
   });
 
   return (
