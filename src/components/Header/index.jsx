@@ -1,5 +1,6 @@
 import { useAuth } from "@/store/auth";
 import { useAuthModal } from "@/store/modal";
+import { toast } from "sonner";
 
 export function Header() {
   const { userName } = useAuth((state) => state);
@@ -41,6 +42,7 @@ export function Header() {
                 e.preventDefault();
                 document.getElementById("ipServer").select(),
                   document.execCommand("copy");
+                toast.success("IP Copiado com sucesso.");
               }}
             >
               <div className="widget-icon">

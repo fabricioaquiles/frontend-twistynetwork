@@ -4,7 +4,7 @@ export function ProductsSkeleton({ cards }) {
   return Array(cards)
     .fill(0)
     .map((item) => (
-      <div className="card-skeleton">
+      <div className="card-skeleton" style={{ marginRight: "10px" }}>
         <div className="left-col">
           <Skeleton circle width={40} height={40} />
         </div>

@@ -3,6 +3,7 @@
 import { queryClient } from "@/services/queryClient";
 import "@/styles/core.css";
 import { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import { QueryClientProvider } from "react-query";
 import { Toaster } from "sonner";
 
