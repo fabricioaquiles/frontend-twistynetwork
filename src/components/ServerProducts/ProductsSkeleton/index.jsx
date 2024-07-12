@@ -7,12 +7,9 @@ export function ProductsSkeleton({ cards }) {
       <div className="card-skeleton" style={{ marginRight: "10px" }}>
         <div className="left-col">
           <Skeleton circle width={40} height={40} />
-        </div>
-        <div className="bottom-col">
-          <Skeleton style={{ marginBottom: "0.6rem", height: 40 }} />
-          <Skeleton style={{ marginBottom: "0.6rem", height: 20 }} />
-          <Skeleton style={{ marginBottom: "0.6rem", height: 40 }} />
-          <Skeleton style={{ marginBottom: "0.6rem", height: 40 }} />
+          <Skeleton height={20} />
+          <Skeleton height={10} />
+          <Skeleton count={2} height={20} />
         </div>
       </div>
     ));

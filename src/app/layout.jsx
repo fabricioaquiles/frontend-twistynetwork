@@ -50,7 +50,7 @@ export default function HomeLayout({
       </head>
       <body>
         <QueryClientProvider client={queryClient}>
-          <SkeletonTheme>
+          <SkeletonTheme baseColor="#202020" highlightColor="#444">
             <div className="nk-app">
               <div className="nk-main">{children}</div>
             </div>
