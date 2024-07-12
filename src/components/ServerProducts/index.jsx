@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useQuery } from "react-query";
+import { ProductsSkeleton } from "./ProductsSkeleton";
 
 async function getProducts(filter) {
   const response = await axios.get(
-    `https://backend-twistynetwork.vercel.app/products?filterType=category?filterValue=${filter}`
+    `https://backend-twistynetwork.vercel.app/products?filterField=category?filterValue=${filter}`
   );
   return response.data;
 }
@@ -17,7 +18,7 @@ export default function ServerProducts({ filter }) {
   return (
     <>
       {isLoading ? (
-        <></>
+        <ProductsSkeleton cards={3} />
       ) : (
         data?.map((item, index) => (
           <div className="category__list--item">

@@ -8,7 +8,6 @@ export default function DashboardLayout({
   return (
     <html>
       <head>
-        <meta charset="utf-8" />
         <meta name="author" content="Fabricio Aquiles" />
         <title>Twisty Network - Dashboard</title>
         <meta

@@ -2,6 +2,7 @@
 
 import { queryClient } from "@/services/queryClient";
 import "@/styles/core.css";
+import { SkeletonTheme } from "react-loading-skeleton";
 import { QueryClientProvider } from "react-query";
 import { Toaster } from "sonner";
 
@@ -11,7 +12,6 @@ export default function HomeLayout({
   return (
     <html>
       <head>
-        <meta charset="utf-8" />
         <meta name="author" content="Fabricio Aquiles" />
         <meta
           name="viewport"
@@ -49,10 +49,12 @@ export default function HomeLayout({
       </head>
       <body>
         <QueryClientProvider client={queryClient}>
-          <div className="nk-app">
-            <div className="nk-main">{children}</div>
-          </div>
-          <Toaster richColors position="top-right" />
+          <SkeletonTheme>
+            <div className="nk-app">
+              <div className="nk-main">{children}</div>
+            </div>
+            <Toaster richColors position="top-right" />
+          </SkeletonTheme>
         </QueryClientProvider>
         <script src="/ajax/libs/jquery/3.5.1/jquery.min.js" />
         <script src="/counter/dist/axios.min.js" />

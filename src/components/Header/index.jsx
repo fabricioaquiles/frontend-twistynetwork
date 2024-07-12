@@ -2,8 +2,8 @@ import { useAuth } from "@/store/auth";
 import { useAuthModal } from "@/store/modal";
 
 export function Header() {
+  const { userName } = useAuth((state) => state);
   const { setAuthModalOpen } = useAuthModal((state) => state);
-  const userName = useAuth((state) => state.userName);
 
   const handleAuthModalOpen = () => setAuthModalOpen(true);
 
@@ -35,7 +35,14 @@ export function Header() {
             )}
           </div>
           <div className="twisty-net-header-g">
-            <div className="widget minecraft-widget">
+            <div
+              className="widget minecraft-widget"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("ipServer").select(),
+                  document.execCommand("copy");
+              }}
+            >
               <div className="widget-icon">
                 <span className="player-count">Carregando..</span>
                 <i className="mdi mdi-axe" />
