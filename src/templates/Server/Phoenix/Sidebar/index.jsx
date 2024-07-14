@@ -13,21 +13,21 @@ export function ServerPhoenixSidebar() {
   const getCategoryIcon = {
     "/server/phoenix": "mdi mdi-cart-arrow-up",
     "/server/phoenix/cash": "mdi mdi-sword",
-    "/server/phoenix/pets": "mdi mdi-sword"
-  }
+    "/server/phoenix/pets": "mdi mdi-sword",
+  };
 
   return (
     <>
       <div className="t-modal-navigation">
         <div className="t-modal-navigation__header">
-          <span className={getCategoryIcon(pathname)}/>
+          <span className={getCategoryIcon[pathname]} />
           <div>
             <span>
               <b style={{ textTransform: "uppercase" }}>
                 Navegando na Categoria
               </b>
             </span>
-            <p>{getCategoryNameFormatted(pathname)}</p>
+            <p>{getCategoryNameFormatted[pathname]}</p>
           </div>
         </div>
         <ul className="t-modal-navigation__list">
