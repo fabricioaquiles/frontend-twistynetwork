@@ -1,8 +1,21 @@
 import { Banner } from "@/components/Banner";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { NavigationModal } from "@/components/Modals";
+import { ServerPhoenixSidebar } from "@/templates/Server/Phoenix/Sidebar";
+import dynamic from "next/dynamic";
+import { useState } from "react";
+
+const ServerProducts = dynamic(() => import("@/components/ServerProducts"), {
+  ssr: false,
+});
 
 export function ServerPhoenixCashTemplate() {
+  const [isNavigationModalOpen, setNavigationModalOpen] = useState(false);
+
+  const handleNavigationModalOpen = () => setNavigationModalOpen(true);
+  const handleNavigationModalClose = () => setNavigationModalOpen(false);
+
   return (
     <>
       <Banner />
@@ -15,6 +28,9 @@ export function ServerPhoenixCashTemplate() {
               data-modal-toggler="selecionarCategoria"
               aria-label="Seleione uma Categoria"
               style={{ borderRadius: 4 }}
+              onClick={() => {
+                handleNavigationModalOpen();
+              }}
             >
               <img
                 src="https://visage.surgeplay.com/head/512/Epicphoenix766?y=30"
@@ -36,32 +52,7 @@ export function ServerPhoenixCashTemplate() {
                 Selecione um Item
               </p>
             </div>
-            <div className="t-modal-navigation">
-              <div className="t-modal-navigation__header">
-                <span className="mdi mdi-circle-multiple" />
-                <div>
-                  <span>
-                    <b style={{ textTransform: "uppercase" }}>
-                      Navegando na Categoria
-                    </b>
-                  </span>
-                  <p>Cash</p>
-                </div>
-              </div>
-              <ul className="t-modal-navigation__list">
-                <li>
-                  <a href="../../phoenix.html">VIPs</a>
-                </li>
-                <li>
-                  <a href="cash.html" className="active">
-                    Cash
-                  </a>
-                </li>
-                <li>
-                  <a href="pets.html">Pets</a>
-                </li>
-              </ul>
-            </div>
+            <ServerPhoenixSidebar />
             <div className="sidebar-nav" id="toggle-mobile-nav">
               <ul>
                 <li>
@@ -199,166 +190,7 @@ export function ServerPhoenixCashTemplate() {
           <main className="twisty-net-main-content">
             <div className="twisty-net-body-description">
               <div className="category__list--with--images">
-                <div className="category__list--item">
-                  <div className="category__list__item--title">
-                    <img
-                      href=""
-                      data-remote="/package/5382725"
-                      src="https://dunb17ur4ymx4.cloudfront.net/packages/images/5ec149391336a82df26d0e8ddc615b58d9d683f6.png"
-                      className="img-rounded twisty-net__toogle--modal"
-                    />
-                  </div>
-                  <div className="category__list__item--details">
-                    <p className="tituloItem">MVP Mensal</p>
-                    <div className="__item__price--list">
-                      <p className="__item--price">
-                        74.99 BRL
-                        <small />
-                      </p>
-                    </div>
-                  </div>
-                  <div className="category__list__item--buttons">
-                    <a
-                      href="#"
-                      target="_blank"
-                      className="cta "
-                      cta-type="info"
-                    >
-                      <i
-                        className="fa fa-question"
-                        data-modal-toggler="mvpMensal"
-                      />
-                    </a>
-                    <a
-                      className="cta"
-                      cta-type="buy"
-                      href="https://twisty.network/checkout"
-                    >
-                      <i className="mdi mdi-cart" />
-                      Efetuar Compra
-                    </a>
-                  </div>
-                </div>
-                <div className="category__list--item">
-                  <div className="category__list__item--title">
-                    <img
-                      href=""
-                      data-remote="/package/5382725"
-                      src="https://dunb17ur4ymx4.cloudfront.net/packages/images/5ec149391336a82df26d0e8ddc615b58d9d683f6.png"
-                      className="img-rounded twisty-net__toogle--modal"
-                    />
-                  </div>
-                  <div className="category__list__item--details">
-                    <p className="tituloItem">MVP Mensal</p>
-                    <div className="__item__price--list">
-                      <p className="__item--price">
-                        74.99 BRL
-                        <small />
-                      </p>
-                    </div>
-                  </div>
-                  <div className="category__list__item--buttons">
-                    <a
-                      href="vantagens/mvp.html"
-                      target="_blank"
-                      className="cta "
-                      cta-type="info"
-                    >
-                      <i
-                        className="fa fa-question"
-                        data-modal-toggler="mvpMensal"
-                      />
-                    </a>
-                    <a
-                      className="cta"
-                      cta-type="buy"
-                      href="https://twisty.network/checkout"
-                    >
-                      <i className="mdi mdi-cart" />
-                      Efetuar Compra
-                    </a>
-                  </div>
-                </div>
-                <div className="category__list--item">
-                  <div className="category__list__item--title">
-                    <img
-                      href=""
-                      data-remote="/package/5382725"
-                      src="https://dunb17ur4ymx4.cloudfront.net/packages/images/5ec149391336a82df26d0e8ddc615b58d9d683f6.png"
-                      className="img-rounded twisty-net__toogle--modal"
-                    />
-                  </div>
-                  <div className="category__list__item--details">
-                    <p className="tituloItem">MVP Mensal</p>
-                    <div className="__item__price--list">
-                      <p className="__item--price">
-                        74.99 BRL
-                        <small />
-                      </p>
-                    </div>
-                  </div>
-                  <div className="category__list__item--buttons">
-                    <a
-                      href="vantagens/mvp.html"
-                      target="_blank"
-                      className="cta "
-                      cta-type="info"
-                    >
-                      <i
-                        className="fa fa-question"
-                        data-modal-toggler="mvpMensal"
-                      />
-                    </a>
-                    <a
-                      className="cta"
-                      cta-type="buy"
-                      href="https://twisty.network/checkout"
-                    >
-                      <i className="mdi mdi-cart" />
-                      Efetuar Compra
-                    </a>
-                  </div>
-                </div>
-                <div className="category__list--item">
-                  <div className="category__list__item--title">
-                    <img
-                      href=""
-                      data-remote="/package/5382725"
-                      src="https://dunb17ur4ymx4.cloudfront.net/packages/images/5ec149391336a82df26d0e8ddc615b58d9d683f6.png"
-                      className="img-rounded twisty-net__toogle--modal"
-                    />
-                  </div>
-                  <div className="category__list__item--details">
-                    <p className="tituloItem">MVP Mensal</p>
-                    <div className="__item__price--list">
-                      <p className="__item--price">
-                        74.99 BRL
-                        <small />
-                      </p>
-                    </div>
-                  </div>
-                  <div className="category__list__item--buttons">
-                    <a
-                      href="vantagens/mvp.html"
-                      target="_blank"
-                      className="cta "
-                      cta-type="info"
-                    >
-                      <i
-                        className="fa fa-question"
-                        data-modal-toggler="mvpMensal"
-                      />
-                    </a>
-                    <a
-                      className="cta"
-                      cta-type="buy"
-                      href="https://twisty.network/checkout"
-                    >
-                      <i className="mdi mdi-cart" />
-                      Efetuar Compra
-                    </a>
-                  </div>
-                </div>
+                <ServerProducts filter="cash" />
               </div>
             </div>
           </main>
@@ -368,127 +200,10 @@ export function ServerPhoenixCashTemplate() {
       <div className="twisty-net-wrapper">
         <div className="footer-twisty-net" id={41012}>
           <Footer />
-          <dialog
-            className="modal"
-            data-loading-modal=""
-            data-modal-type="package"
-          >
-            <div className="t-modal-loading">
-              <svg
-                width={50}
-                height={50}
-                viewBox="0 0 50 50"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2 25C2 37.7026 12.2974 48 25 48C37.7026 48 48 37.7026 48 25C48 12.2974 37.7026 2 25 2"
-                  stroke="white"
-                  strokeWidth={4}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-            <div className="t-modal-content">
-              <button
-                className="t-modal-content--close"
-                aria-label="Close Modal"
-              >
-                <i aria-hidden="true" className="mdi mdi-window-close" />
-              </button>
-              <div className="t-modal-content__box"></div>
-            </div>
-          </dialog>
-          <dialog
-            className="modal"
-            data-loading-modal=""
-            data-modal-type="selecionarCategoria"
-          >
-            <div className="t-modal-loading">
-              <svg
-                width={50}
-                height={50}
-                viewBox="0 0 50 50"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2 25C2 37.7026 12.2974 48 25 48C37.7026 48 48 37.7026 48 25C48 12.2974 37.7026 2 25 2"
-                  stroke="white"
-                  strokeWidth={4}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-            <div className="t-modal-content">
-              <div className="t-modal-content__box">
-                <div className="t-modal-content__box__categoryModal">
-                  <h3>Selecione um Item</h3>
-                  <p>Clique em qualquer lugar fora para sair desta aba.</p>
-                  <ul>
-                    <li>
-                      <a href="phoenix.html" className="">
-                        <img src="https://visage.surgeplay.com/head/512/Epicphoenix766?y=30" />
-                        R. UP Phoenix
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </dialog>
-          <dialog
-            className="modal"
-            data-loading-modal=""
-            data-modal-type="mvpMensal"
-          >
-            <div className="t-modal-loading">
-              <svg
-                width={50}
-                height={50}
-                viewBox="0 0 50 50"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2 25C2 37.7026 12.2974 48 25 48C37.7026 48 48 37.7026 48 25C48 12.2974 37.7026 2 25 2"
-                  stroke="white"
-                  strokeWidth={4}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-            <div className="t-modal-content">
-              <button
-                className="t-modal-content--close"
-                aria-label="Close Modal"
-              >
-                <i aria-hidden="true" className="mdi mdi-window-close" />
-              </button>
-              <div className="t-modal-content__box">
-                <div className="t-modal-content__box__categoryModal">
-                  <h3>Selecione um asd</h3>
-                  <ul>
-                    <li>
-                      <a href="categoria/ranks.html">
-                        <img src="https://media.discordapp.net/attachments/896083092656234506/1124908490805219419/HaunzMC_sem_fundo.png?width=566&height=566" />
-                        Global
-                      </a>
-                    </li>
-                    <li>
-                      <a href="categoria/ranks.html" className="">
-                        <img src="https://staticassets.hypixel.net/store/icons/gifts/3.png" />
-                        Cash &amp; Moedas
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </dialog>
+          <NavigationModal
+            isOpen={isNavigationModalOpen}
+            handleClose={handleNavigationModalClose}
+          />
         </div>
       </div>
     </>

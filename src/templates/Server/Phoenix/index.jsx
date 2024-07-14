@@ -2,6 +2,7 @@ import { Banner } from "@/components/Banner";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { NavigationModal } from "@/components/Modals";
+import { ServerPhoenixSidebar } from "@/templates/Server/Phoenix/Sidebar";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 
@@ -51,32 +52,7 @@ export function ServerPhoenixTemplate() {
                 Selecione um Item
               </p>
             </div>
-            <div className="t-modal-navigation">
-              <div className="t-modal-navigation__header">
-                <span className="mdi mdi-sword" />
-                <div>
-                  <span>
-                    <b style={{ textTransform: "uppercase" }}>
-                      Navegando na Categoria
-                    </b>
-                  </span>
-                  <p>VIPs</p>
-                </div>
-              </div>
-              <ul className="t-modal-navigation__list">
-                <li>
-                  <a className="active" href="#">
-                    VIPs
-                  </a>
-                </li>
-                <li>
-                  <a href="categoria/phoenix/cash.html">Cash</a>
-                </li>
-                <li>
-                  <a href="categoria/phoenix/pets.html">Pets</a>
-                </li>
-              </ul>
-            </div>
+            <ServerPhoenixSidebar />
             <div className="sidebar-nav" id="toggle-mobile-nav">
               <ul>
                 <li>
