@@ -18,7 +18,7 @@ export default function ServerProducts({ filter }) {
   return (
     <>
       {isLoading ? (
-        <ProductsSkeleton cards={3} />
+        <ProductsSkeleton cards={4} />
       ) : (
         data?.map((item, index) => (
           <div className="category__list--item">

@@ -5,11 +5,28 @@ export function ProductsSkeleton({ cards }) {
     .fill(0)
     .map((item) => (
       <div className="card-skeleton" style={{ marginRight: "10px" }}>
-        <div className="left-col">
-          <Skeleton circle width={40} height={40} />
-          <Skeleton height={20} />
-          <Skeleton height={10} />
-          <Skeleton count={2} height={20} />
+        <div className="card-skeleton-col">
+          <Skeleton circle width={60} height={60} />
+          <Skeleton
+            width={100}
+            height={13}
+            style={{ marginTop: 10, borderRadius: 10 }}
+          />
+          <Skeleton
+            width={180}
+            height={10}
+            style={{ marginTop: -20, borderRadius: 10 }}
+          />
+          <Skeleton
+            width={150}
+            height={10}
+            style={{
+              marginTop: -20,
+              marginBottom: "25px",
+              borderRadius: 10,
+            }}
+          />
+          <Skeleton width={150} height={15} style={{ borderRadius: 10 }} />
         </div>
       </div>
     ));
