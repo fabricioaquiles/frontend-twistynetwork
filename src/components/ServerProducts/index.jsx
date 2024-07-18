@@ -51,8 +51,6 @@ export default function ServerProducts({ filter }) {
                     isOpen: true,
                   });
                 }}
-                href="#"
-                target="_blank"
                 className="cta "
                 cta-type="info"
               >

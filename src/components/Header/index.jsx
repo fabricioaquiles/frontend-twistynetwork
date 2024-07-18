@@ -66,11 +66,13 @@ export function Header() {
             >
               <div className="widget-icon">
                 <span className="player-count">
-                  {serverCount.isLoading ? (
-                    <>Carregando..</>
-                  ) : (
-                    serverCount.data.players.online
-                  )}
+                  {serverCount.isLoading && <>Carregando...</>}
+                  {!serverCount.isLoading &&
+                    (serverCount.data.players.online ? (
+                      serverCount.data.players.online
+                    ) : (
+                      <>0</>
+                    ))}
                 </span>
                 <i className="mdi mdi-axe" />
               </div>
