@@ -4,7 +4,7 @@ import { ProductsSkeleton } from "./ProductsSkeleton";
 
 async function getProducts(filter) {
   const response = await axios.get(
-    `https://backend-twistynetwork.vercel.app/products?filterField=category&filterValue=${filter}`
+    `https://backend-twistynetwork.vercel.app/products/category/${filter}`
   );
   return response.data;
 }
