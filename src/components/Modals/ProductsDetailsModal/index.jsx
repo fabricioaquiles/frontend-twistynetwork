@@ -1,3 +1,4 @@
+import { useProductsDetailsModal } from "@/store/modal";
 import { Backdrop, Box, Fade, Modal } from "@mui/material";
 import { useQuery } from "react-query";
 
