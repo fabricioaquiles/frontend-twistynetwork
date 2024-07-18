@@ -1,3 +1,4 @@
+import { useProductsDetailsModal } from "@/store/modal";
 import axios from "axios";
 import { useQuery } from "react-query";
 import { ProductsSkeleton } from "./ProductsSkeleton";
@@ -10,6 +11,8 @@ async function getProducts(filter) {
 }
 
 export default function ServerProducts({ filter }) {
+  const { setProductsDetails } = useProductsDetailsModal((state) => state);
+
   const { data, isLoading } = useQuery({
     queryKey: ["products"],
     queryFn: () => getProducts(filter),
@@ -40,7 +43,19 @@ export default function ServerProducts({ filter }) {
               </div>
             </div>
             <div className="category__list__item--buttons">
-              <a href="#" target="_blank" className="cta " cta-type="info">
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  setProductsDetails({
+                    id: item.id,
+                    isOpen: true,
+                  });
+                }}
+                href="#"
+                target="_blank"
+                className="cta "
+                cta-type="info"
+              >
                 <i className="fa fa-question" data-modal-toggler="mvpMensal" />
               </a>
               <a

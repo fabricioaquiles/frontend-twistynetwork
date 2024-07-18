@@ -1,0 +1,53 @@
+import { Backdrop, Box, Fade, Modal } from "@mui/material";
+import { useQuery } from "react-query";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 800,
+  bgcolor: "#1a1a26",
+  border: "2px solid #1a1a26",
+  boxShadow: 24,
+  p: 4,
+};
+
+async function getProduct(id) {
+  const response = await axios.get(
+    `https://backend-twistynetwork.vercel.app/products/${id}`
+  );
+  return response.data;
+}
+
+export function ProductDetailsModal({ handleClose }) {
+  const { productsDetails } = useProductsDetailsModal((state) => state);
+
+  const { status, data } = useQuery({
+    queryKey: ["productDetail"],
+    queryFn: () => getProduct(productsDetails.id),
+  });
+
+  return (
+    <>
+      <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        open={productsDetails.isOpen}
+        onClose={handleClose}
+        closeAfterTransition
+        slots={{ backdrop: Backdrop }}
+        slotProps={{
+          backdrop: {
+            timeout: 500,
+          },
+        }}
+      >
+        <Fade in={isOpen}>
+          <Box sx={style}></Box>
+          {!(status === "pending" || status === "error") && data.description}
+        </Fade>
+      </Modal>
+    </>
+  );
+}
