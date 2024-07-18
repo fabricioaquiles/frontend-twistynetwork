@@ -21,12 +21,12 @@ async function getProduct(id) {
   return response.data;
 }
 
-export function ProductDetailsModal({ handleClose }) {
-  const { productsDetails } = useProductsDetailsModal((state) => state);
+export function ProductDetailsModal({ isOpen, handleClose }) {
+  const { productDetailsId } = useProductsDetailsModal((state) => state);
 
   const { status, data } = useQuery({
     queryKey: ["productDetail"],
-    queryFn: () => getProduct(productsDetails.id),
+    queryFn: () => getProduct(productDetailsId),
   });
 
   return (
@@ -34,7 +34,7 @@ export function ProductDetailsModal({ handleClose }) {
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
-        open={productsDetails.isOpen}
+        open={isOpen}
         onClose={handleClose}
         closeAfterTransition
         slots={{ backdrop: Backdrop }}

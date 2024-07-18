@@ -14,9 +14,11 @@ const ServerProducts = dynamic(() => import("@/components/ServerProducts"), {
 
 export function ServerPhoenixTemplate() {
   const [isNavigationModalOpen, setNavigationModalOpen] = useState(false);
-  const { setIsOpenProductDetails } = useProductsDetailsModal((state) => state);
+  const { isProductDetailsModalOpen, setProductDetailsModalOpen } =
+    useProductsDetailsModal((state) => state);
 
-  const handleProductsDetailsModalClose = () => setIsOpenProductDetails(false);
+  const handleProductsDetailsModalClose = () =>
+    setProductDetailsModalOpen(false);
 
   const handleNavigationModalOpen = () => setNavigationModalOpen(true);
   const handleNavigationModalClose = () => setNavigationModalOpen(false);
@@ -209,7 +211,10 @@ export function ServerPhoenixTemplate() {
             isOpen={isNavigationModalOpen}
             handleClose={handleNavigationModalClose}
           />
-          <ProductDetailsModal handleClose={handleProductsDetailsModalClose} />
+          <ProductDetailsModal
+            isOpen={isProductDetailsModalOpen}
+            handleClose={handleProductsDetailsModalClose}
+          />
         </div>
       </div>
     </>

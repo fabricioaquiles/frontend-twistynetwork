@@ -11,7 +11,8 @@ async function getProducts(filter) {
 }
 
 export default function ServerProducts({ filter }) {
-  const { setProductsDetails } = useProductsDetailsModal((state) => state);
+  const { setProductDetailsId, setProductDetailsModalOpen } =
+    useProductsDetailsModal((state) => state);
 
   const { data, isLoading } = useQuery({
     queryKey: ["products"],
@@ -46,10 +47,8 @@ export default function ServerProducts({ filter }) {
               <a
                 onClick={(e) => {
                   e.preventDefault();
-                  setProductsDetails({
-                    id: item.id,
-                    isOpen: true,
-                  });
+                  setProductDetailsId(id);
+                  setProductDetailsModalOpen(true);
                 }}
                 className="cta "
                 cta-type="info"
