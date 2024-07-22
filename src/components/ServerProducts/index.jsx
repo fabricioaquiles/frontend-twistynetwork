@@ -18,6 +18,7 @@ export default function ServerProducts({ filter }) {
     isProductDetailsModalOpen,
   } = useProductsDetailsModal((state) => state);
 
+  const handleProductsDetailsModalOpen = () => setProductDetailsModalOpen(true);
   const handleProductsDetailsModalClose = () =>
     setProductDetailsModalOpen(false);
 
@@ -28,6 +29,10 @@ export default function ServerProducts({ filter }) {
 
   return (
     <>
+      <ProductDetailsModal
+        isOpen={isProductDetailsModalOpen}
+        handleClose={handleProductsDetailsModalClose}
+      />
       {isLoading ? (
         <ProductsSkeleton cards={4} />
       ) : (
@@ -56,7 +61,7 @@ export default function ServerProducts({ filter }) {
                   e.preventDefault();
                   alert("ServerProductsModalTest");
                   setProductDetailsId(id);
-                  setProductDetailsModalOpen(true);
+                  handleProductsDetailsModalOpen();
                 }}
                 className="cta "
                 cta-type="info"
@@ -75,10 +80,6 @@ export default function ServerProducts({ filter }) {
           </div>
         ))
       )}
-      <ProductDetailsModal
-        isOpen={isProductDetailsModalOpen}
-        handleClose={handleProductsDetailsModalClose}
-      />
     </>
   );
 }
