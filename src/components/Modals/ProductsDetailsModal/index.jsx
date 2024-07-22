@@ -2,18 +2,6 @@ import { useProductsDetailsModal } from "@/store/modal";
 import { Backdrop, Box, Fade, Modal } from "@mui/material";
 import { useQuery } from "react-query";
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 800,
-  bgcolor: "#1a1a26",
-  border: "2px solid #1a1a26",
-  boxShadow: 24,
-  p: 4,
-};
-
 async function getProduct(id) {
   const response = await axios.get(
     `https://backend-twistynetwork.vercel.app/products/${id}`
@@ -28,6 +16,18 @@ export function ProductDetailsModal({ isOpen, handleClose }) {
     queryKey: ["productDetail"],
     queryFn: () => getProduct(productDetailsId),
   });
+
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 800,
+    bgcolor: "#1a1a26",
+    border: "2px solid #1a1a26",
+    boxShadow: 24,
+    p: 4,
+  };
 
   return (
     <>
