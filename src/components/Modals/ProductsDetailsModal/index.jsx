@@ -22,7 +22,8 @@ async function getProduct(id) {
 }
 
 export function ProductDetailsModal({ isOpen, handleClose }) {
-  const { productDetailsId } = useProductsDetailsModal((state) => state);
+  const { productDetailsId, isProductDetailsModalOpen } =
+    useProductsDetailsModal((state) => state);
 
   const { status, data } = useQuery({
     queryKey: ["productDetail"],
@@ -34,7 +35,7 @@ export function ProductDetailsModal({ isOpen, handleClose }) {
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
-        open={isOpen}
+        open={isProductDetailsModalOpen}
         onClose={handleClose}
         closeAfterTransition
         slots={{ backdrop: Backdrop }}
@@ -44,7 +45,7 @@ export function ProductDetailsModal({ isOpen, handleClose }) {
           },
         }}
       >
-        <Fade in={isOpen}>
+        <Fade in={isProductDetailsModalOpen}>
           <Box sx={style}></Box>
           {!(status === "pending" || status === "error") && data.description}
         </Fade>
