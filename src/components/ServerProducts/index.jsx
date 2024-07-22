@@ -1,4 +1,3 @@
-import { ProductDetailsModal } from "@/components/Modals/ProductsDetailsModal";
 import { useProductsDetailsModal } from "@/store/modal";
 import axios from "axios";
 import { useQuery } from "react-query";
@@ -12,15 +11,10 @@ async function getProducts(filter) {
 }
 
 export default function ServerProducts({ filter }) {
-  const {
-    setProductDetailsId,
-    setProductDetailsModalOpen,
-    isProductDetailsModalOpen,
-  } = useProductsDetailsModal((state) => state);
+  const { setProductDetailsId, setProductDetailsModalOpen } =
+    useProductsDetailsModal((state) => state);
 
   const handleProductsDetailsModalOpen = () => setProductDetailsModalOpen(true);
-  const handleProductsDetailsModalClose = () =>
-    setProductDetailsModalOpen(false);
 
   const { data, isLoading } = useQuery({
     queryKey: ["products"],
@@ -29,10 +23,6 @@ export default function ServerProducts({ filter }) {
 
   return (
     <>
-      <ProductDetailsModal
-        isOpen={isProductDetailsModalOpen}
-        handleClose={handleProductsDetailsModalClose}
-      />
       {isLoading ? (
         <ProductsSkeleton cards={4} />
       ) : (

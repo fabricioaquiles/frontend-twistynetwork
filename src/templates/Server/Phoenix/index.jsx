@@ -2,6 +2,8 @@ import { Banner } from "@/components/Banner";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { NavigationModal } from "@/components/Modals";
+import { ProductDetailsModal } from "@/components/Modals/ProductsDetailsModal";
+import { useProductsDetailsModal } from "@/store/modal";
 import { ServerPhoenixSidebar } from "@/templates/Server/Phoenix/Sidebar";
 import dynamic from "next/dynamic";
 import { useState } from "react";
@@ -12,6 +14,11 @@ const ServerProducts = dynamic(() => import("@/components/ServerProducts"), {
 
 export function ServerPhoenixTemplate() {
   const [isNavigationModalOpen, setNavigationModalOpen] = useState(false);
+  const { setProductDetailsModalOpen, isProductDetailsModalOpen } =
+    useProductsDetailsModal((state) => state);
+
+  const handleProductsDetailsModalClose = () =>
+    setProductDetailsModalOpen(false);
 
   const handleNavigationModalOpen = () => setNavigationModalOpen(true);
   const handleNavigationModalClose = () => setNavigationModalOpen(false);
@@ -203,6 +210,10 @@ export function ServerPhoenixTemplate() {
           <NavigationModal
             isOpen={isNavigationModalOpen}
             handleClose={handleNavigationModalClose}
+          />
+          <ProductDetailsModal
+            isOpen={isProductDetailsModalOpen}
+            handleClose={handleProductsDetailsModalClose}
           />
         </div>
       </div>

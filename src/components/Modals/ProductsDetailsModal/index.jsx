@@ -17,18 +17,6 @@ export function ProductDetailsModal({ isOpen, handleClose }) {
     queryFn: () => getProduct(productDetailsId),
   });
 
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 800,
-    bgcolor: "#1a1a26",
-    border: "2px solid #1a1a26",
-    boxShadow: 24,
-    p: 4,
-  };
-
   return (
     <>
       <Modal
@@ -45,7 +33,19 @@ export function ProductDetailsModal({ isOpen, handleClose }) {
         }}
       >
         <Fade in={isOpen}>
-          <Box sx={style}></Box>
+          <Box
+            sx={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: 800,
+              bgcolor: "#1a1a26",
+              border: "2px solid #1a1a26",
+              boxShadow: 24,
+              p: 4,
+            }}
+          ></Box>
           {!(status === "pending" || status === "error") && data?.description}
         </Fade>
       </Modal>
