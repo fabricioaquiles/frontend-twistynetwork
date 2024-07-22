@@ -47,7 +47,7 @@ export function ProductDetailsModal({ isOpen, handleClose }) {
       >
         <Fade in={isProductDetailsModalOpen}>
           <Box sx={style}></Box>
-          {!(status === "pending" || status === "error") && data.description}
+          {!(status === "pending" || status === "error") && data?.description}
         </Fade>
       </Modal>
     </>
