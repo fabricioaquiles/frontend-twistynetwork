@@ -1,8 +1,7 @@
 import { Banner } from "@/components/Banner";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { NavigationModal } from "@/components/Modals";
-import { ProductDetailsModal } from "@/components/Modals/ProductsDetailsModal";
+import { NavigationModal, ProductDetailsModal } from "@/components/Modals";
 import { useProductsDetailsModal } from "@/store/modal";
 import { ServerPhoenixSidebar } from "@/templates/Server/Phoenix/Sidebar";
 import dynamic from "next/dynamic";

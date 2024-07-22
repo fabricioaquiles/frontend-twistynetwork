@@ -45,8 +45,9 @@ export function ProductDetailsModal({ isOpen, handleClose }) {
               boxShadow: 24,
               p: 4,
             }}
-          ></Box>
-          {!(status === "pending" || status === "error") && data?.description}
+          >
+            {!(status === "pending" || status === "error") && data?.description}
+          </Box>
         </Fade>
       </Modal>
     </>
