@@ -68,10 +68,10 @@ export function Header() {
                 <span className="player-count">
                   {serverCount.isLoading && <>Carregando...</>}
                   {!serverCount.isLoading &&
-                    (serverCount.data.players.online ? (
-                      serverCount.data.players.online
-                    ) : (
+                    ("error" in serverCount.data ? (
                       <>0</>
+                    ) : (
+                      serverCount.data.players.online
                     ))}
                 </span>
                 <i className="mdi mdi-axe" />
