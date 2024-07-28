@@ -31,6 +31,7 @@ export function ProductDetailsModal({ isOpen, handleClose }) {
               border: "2px solid #1a1a26",
               boxShadow: 24,
               p: 4,
+              outline: 0,
             }}
           >
             {productDetailsData?.description}
