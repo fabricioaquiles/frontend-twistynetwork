@@ -54,10 +54,10 @@ export default function ServerProducts({ filter }) {
             </div>
             <div className="category__list__item--buttons">
               <a
-                onClick={(e) => {
+                onClick={async (e) => {
                   e.preventDefault();
-                  setProductDetailsData(getProduct(item.id));
-                  alert(getProduct(item.id));
+                  setProductDetailsData(await getProduct(item.id));
+                  alert(await getProduct(item.id));
                   handleProductsDetailsModalOpen();
                 }}
                 className="cta "
