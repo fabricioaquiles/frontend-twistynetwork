@@ -47,10 +47,11 @@ export function ProductDetailsModal({ isOpen, handleClose }) {
               p: 4,
             }}
           >
-            {(status === "pending" || status === "error") && (
+            {!(status === "pending" || status === "error") ? (
+              data?.description
+            ) : (
               <DetailsSkeleton />
             )}
-            {!(status === "pending" || status === "error") && data?.description}
           </Box>
         </Fade>
       </Modal>
