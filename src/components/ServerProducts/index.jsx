@@ -57,7 +57,6 @@ export default function ServerProducts({ filter }) {
                 onClick={async (e) => {
                   e.preventDefault();
                   setProductDetailsData(await getProduct(item.id));
-                  alert(await getProduct(item.id));
                   handleProductsDetailsModalOpen();
                 }}
                 className="cta "
