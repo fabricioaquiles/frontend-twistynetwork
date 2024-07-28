@@ -1,7 +1,6 @@
 import { useProductsDetailsModal } from "@/store/modal";
 import { Backdrop, Box, Fade, Modal } from "@mui/material";
 import { useQuery } from "react-query";
-import { DetailsSkeleton } from "./DetailsSkeleton";
 
 async function getProduct(id) {
   const response = await axios.get(
@@ -50,7 +49,7 @@ export function ProductDetailsModal({ isOpen, handleClose }) {
             {!(status === "pending" || status === "error") ? (
               data?.description
             ) : (
-              <DetailsSkeleton />
+              <h1>Carregando.</h1>
             )}
           </Box>
         </Fade>
