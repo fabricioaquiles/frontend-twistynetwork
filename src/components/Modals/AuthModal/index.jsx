@@ -13,6 +13,7 @@ const style = {
   border: "2px solid #1a1a26",
   boxShadow: 24,
   p: 4,
+  outline: 0,
 };
 
 export function AuthModal({ isOpen, handleClose }) {
@@ -52,7 +53,9 @@ export function AuthModal({ isOpen, handleClose }) {
                   <div className="twisty-net-login">
                     <div id="IGN_MC">
                       <img
-                        src={`https://visage.surgeplay.com/face/32/${inputName == "" ? "X-Steve" : inputName}`}
+                        src={`https://visage.surgeplay.com/face/32/${
+                          inputName == "" ? "X-Steve" : inputName
+                        }`}
                         alt=""
                         id="avatar_login"
                       />

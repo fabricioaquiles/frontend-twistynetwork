@@ -1,4 +1,4 @@
-import { Modal, Box, Fade, Backdrop } from "@mui/material";
+import { Backdrop, Box, Fade, Modal } from "@mui/material";
 import { useRouter } from "next/navigation";
 
 const style = {
@@ -11,6 +11,7 @@ const style = {
   border: "2px solid #1a1a26",
   boxShadow: 24,
   p: 4,
+  outline: 0,
 };
 
 export function NavigationModal({ isOpen, handleClose }) {
