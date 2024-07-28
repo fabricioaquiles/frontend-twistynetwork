@@ -57,6 +57,7 @@ export default function ServerProducts({ filter }) {
                 onClick={(e) => {
                   e.preventDefault();
                   setProductDetailsData(getProduct(item.id));
+                  alert(getProduct(item.id));
                   handleProductsDetailsModalOpen();
                 }}
                 className="cta "
