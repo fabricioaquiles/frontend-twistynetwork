@@ -1,21 +1,8 @@
 import { useProductsDetailsModal } from "@/store/modal";
 import { Backdrop, Box, Fade, Modal } from "@mui/material";
-import { useQuery } from "react-query";
-
-async function getProduct(id) {
-  const response = await axios.get(
-    `https://backend-twistynetwork.vercel.app/products/${id}`
-  );
-  return response.data;
-}
 
 export function ProductDetailsModal({ isOpen, handleClose }) {
-  const { productDetailsId } = useProductsDetailsModal((state) => state);
-
-  const { status, data } = useQuery({
-    queryKey: ["productDetail"],
-    queryFn: () => getProduct(productDetailsId),
-  });
+  const { productDetailsData } = useProductsDetailsModal((state) => state);
 
   return (
     <>
@@ -46,11 +33,7 @@ export function ProductDetailsModal({ isOpen, handleClose }) {
               p: 4,
             }}
           >
-            {!(status === "pending" || status === "error") ? (
-              data?.description
-            ) : (
-              <h1>Carregando.</h1>
-            )}
+            {productDetailsData?.description}
           </Box>
         </Fade>
       </Modal>

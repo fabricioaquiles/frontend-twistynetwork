@@ -10,8 +10,15 @@ async function getProducts(filter) {
   return response.data;
 }
 
+async function getProduct(id) {
+  const response = await axios.get(
+    `https://backend-twistynetwork.vercel.app/products/${id}`
+  );
+  return response.data;
+}
+
 export default function ServerProducts({ filter }) {
-  const { setProductDetailsId, setProductDetailsModalOpen } =
+  const { setProductDetailsData, setProductDetailsModalOpen } =
     useProductsDetailsModal((state) => state);
 
   const handleProductsDetailsModalOpen = () => setProductDetailsModalOpen(true);
@@ -49,7 +56,7 @@ export default function ServerProducts({ filter }) {
               <a
                 onClick={(e) => {
                   e.preventDefault();
-                  setProductDetailsId(item.id);
+                  setProductDetailsData(getProduct(item.id));
                   handleProductsDetailsModalOpen();
                 }}
                 className="cta "

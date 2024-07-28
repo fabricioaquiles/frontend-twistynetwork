@@ -1,9 +1,9 @@
 import { create } from 'zustand';
 
 const useProductsDetailsModal = create((set) => ({
-    productDetailsId: "0",
+    productDetailsData: "0",
     isProductDetailsModalOpen: false,
-    setProductDetailsId: (arg) => set({ productDetailsId: arg }),
+    setProductDetailsData: (arg) => set({ productDetailsData: arg }),
     setProductDetailsModalOpen: (arg) => set({ isProductDetailsModalOpen: arg }),
 }));
 
